@@ -22,185 +22,228 @@ body {
   -webkit-animation: bugfix infinite 1s;
 }
 
+@import url(https://fonts.googleapis.com/css?family=Audiowide);
+//colors 
+$blue: #85D8CE;
+$blue-dark: #085078;
+$blue-light: #D4FAF6;
 
-/* Fonts */
-
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-$easing:cubic-bezier(0.680, -0.550, 0.265, 1.550);
-
-/* Variables */
-
-$color:white;
-$font:'Oswald', sans-serif;
-                                                      
-/* Styles */
-
-body{
-  background:rgb(134, 187, 137);
-  font-family:$font;
-  .title{
-    width:500px;
-    margin:0 auto;
-    text-align:center;
-    h1,h2{
-      color:white;
-      font-weight:normal;
-      margin:0;
-      text-shadow: 0px 2px rgba(0, 0, 0, 0.18);
+//mixins
+@mixin bp($bp, $min-max: min-width) {
+    $em: $bp/16;
+    @media(#{$min-max}: #{$em}em) {
+        @content;
     }
-    h1{
-      font-size:30px;
-      margin-top:40px;
-    }
-    h2{
-      font-size:15px;
-      margin-bottom:30px;
-    }
-  }
-  .wrapper{
-    width:400px;
-    margin:0 auto;
-    background: white;
-    border-radius:4px;
-    position:relative;
-    box-shadow: 0px 2px rgba(0, 0, 0, 0.12); 
-    label{
-      display: block;
-      position:relative;
-      color: #b5abab;
-      overflow:hidden;
-      cursor: pointer;
-      height: 56px;
-      -webkit-transition: text-indent 0.2s;
-      text-indent:20px;
-      padding-top: 1px;
-    }
-    ul{
-      margin:0;
-      padding:0;
-    }
-    li{
-      color:white;
-      list-style-type:none;
-      a{
-        display:block;
-        width:100%;
-        padding: 15px 0px;
-        text-decoration:none;
-        color:white;
-        border-bottom:1px solid rgba(0, 0, 0, 0.06);
-      }
-      a:hover{
-        background-color:rgba(0, 0, 0, 0.06);
-      }
-    }
-    label:hover{
-      background:rgba(203, 228, 205, 0.6) !important;
-      color: rgb(79, 115, 81);
-      text-indent:30px;
-      -webkit-transition: text-indent 0.2s;
-	    -moz-transition: text-indent 0.2s;
-	    transition: text-indent 0.2s;
-    }
-    input[type="checkbox"]{
-      display:none;
-    }
-    span{
-      height:3px;
-      position:absolute;
-      width:0px;
-      display:block;
-      top: 58px;
-      background:#38B087;
-    }
-    .content{
-      height: 0;
-      background: rgba(92, 127, 94, 0.72);
-      height: 300px;
-      position: relative;
-      border-top: 2px solid rgba(0, 0, 0, 0.12);
-      top: 4px;
-    }
-    .lil_arrow{
-      width:5px;
-      height:5px;
-      -webkit-transition: transform 0.8s;
-      transition: transform 0.8s;
-      -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      border-top:2px solid rgba(0, 0, 0, 0.33);
-      border-right:2px solid rgba(0, 0, 0, 0.33);
-      float:right;
-      position:relative;
-      top: -30px;
-      right: 27px;
-      transform:rotate(45deg)
-    }
-    input[type="checkbox"]:checked + label > .content{
-      display:block;
-    }
-    input[type="checkbox"]:checked + label > span{
-      display:none;
-    }
-    input[type="checkbox"]:checked + label > .lil_arrow{
-      -webkit-transition: transform 0.8s;
-      transition: transform 0.8s;
-      -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-      transform:rotate(135deg)
-    }
-    input[type="checkbox"]:checked + label{
-      display: block;
-      background: rgba(203, 228, 205, 0.6) !important;
-      color: rgb(79, 115, 81);
-      text-indent:30px;height: 225px;
-      -webkit-transition: height 0.8s;
-      transition: height 0.8s;
-      -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
-    label:hover > span{
-      width:100%;
-     -webkit-transition-timing-function:$easing;
-      transition: width 0.4s;
-    }
-    input[type='checkbox']:not(:checked) + label{
-      display:block;
-      -webkit-transition: height 0.8s;
-	    -moz-transition: height 0.8s;
-	    transition: height 0.8s;
-      height:60px;
-      -webkit-transition-timing-function:$easing;
-    }
-  }
 }
-::-webkit-scrollbar { 
-  display: none; 
+//bug fix for general sibling.
+body { -webkit-animation: bugfix infinite 1s; } 
+@-webkit-keyframes bugfix { from { padding: 0; } to { padding: 0; } }
+
+body {
+    background: radial-gradient(ellipse farthest-side at 100% 100%, $blue-light 1%, $blue 30%, $blue-dark 120%);
+    background-attachment: fixed;
+    padding-top: 2em; 
+    overflow-y: scroll;
 }
 
 
-.archives {
-  list-style: none;
-  padding-left: 0;
-  border: 2px solid #dfe2e5;
+.wrap {
+    display: block;
+    max-width: 1024px;
+    margin:  0 auto 2em; 
+    padding: 0 1em;
+    width: 100%;
+    
+    @include bp(700) {
+        padding: 3em; 
+    }
 }
 
-.archives-title {
-  text-align: center;
-  border-radius: 1rem;
-  background-color: var(--gray-300);
+p { 
+    color: #555; 
+    text-shadow: 1px 1px 1px #fff;
 }
 
-.archive-item {
-  padding: .25rem .5rem;
-  border-bottom: 1px solid #dfe2e5;
+a, a:visited {
+    color: darken($blue, 15%);
+    text-decoration: none;
 }
 
-.archive-date {
-  float: left;
-  width: 4rem;
-  
-  @media (min-width: 38rem) {
-    float: right;
-    width: auto;
-  }
+//questions styles
+.question-section {
+    background: lighten($blue-light, 5%); 
+    box-shadow: 0 2px 5px rgba(#444, .4);
+    display: inline-block;
+    font-size: 1rem;
+    margin-bottom: 1em; 
+    padding: 1em;
+    position: relative;
+    vertical-align: top;
+    width: 100%;
+    @include bp(800) {
+        font-size: .75rem;
+        padding: 1em 1.5em; 
+    }
+    
+    @include bp(1000) {
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-family: "Audiowide", cursive; 
+        color: $blue-dark;
+        font-size: 1.25em;
+        font-size: 5.5vw;
+        font-weight: 700;
+        margin-bottom: .25em;
+        @include bp(516) {
+            font-size: 2.25em;
+            font-size: 4.9vw;
+        }
+        
+        @include bp(1080) {
+            font-size: 3.25em;
+        }
+    }
+    
+    & > p,
+    & > h1 { text-align: center; }
+    
+    & > p { 
+        font-size: 0.667em;
+        font-size: 2.8vw;
+        margin-bottom: 1em;
+        
+        @include bp(355) {
+            font-size: 0.667em;
+        }
+
+        @include bp(500) {
+            font-size: 1em;
+        }
+
+        @include bp(1300) {
+            font-size: 1.15em;
+        }
+    }
 }
+
+
+
+
+
+//tabs
+div[class^="cat"] {
+    width: 100%;
+    //tabs lables
+    & > label {
+        background: darken($blue, 5%);
+        color: #fff; 
+        cursor: pointer;
+        display: block;
+        font-weight: bold;
+        line-height: 1.4;
+        margin-bottom: 0.5em;
+        padding: 0.75em 0.5em; 
+        transition: all 0.55s ;
+        &:hover { background: $blue; }
+        @include bp(800) {
+            font-size: 1.25em;
+        }
+    }
+    //hide catagory radios
+    & > input { 
+        position: absolute;
+        z-index: -999;
+        &:focus + label { 
+            background: darken($blue, 15%);
+            letter-spacing: 1px; 
+        }
+    }
+    //hide questions till tab is picked 
+    .question-wrap {
+        height: 100%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all .75s cubic-bezier(0.19, 1, 0.22, 1);
+        width: 100%; 
+    }
+    //open accordian style
+    & > input:checked ~ .question-wrap { 
+        max-height: 1000px;
+        opacity: 1;
+        transition: all 1.95s cubic-bezier(0.19, 1, 0.22, 1) ;
+    }
+    
+    
+    
+    ///////////////////////////////
+    //question accordian styles //
+    /////////////////////////////
+    
+    @at-root {
+        
+        .question-wrap {
+            .question {
+                margin: 1em 0; 
+            }
+            
+            label {
+                color: lighten(#085078, 5%); 
+                cursor: pointer;
+                display: block;
+                font-weight: bold;
+                margin-bottom: 0.5em;
+
+                @include bp(800) {
+                    font-size: 1.25em;
+                }
+            }
+            
+            input { 
+                position: absolute;
+                z-index: -999;
+                top: -10000px;
+                &:focus + label { 
+                    color: darken($blue-dark, 5%);
+                } 
+            }
+            
+            input:not(:checked) ~ p {
+                height: 100%;
+                max-height: 0;
+                opacity: 0;
+                overflow: hidden;
+                transition: all .75s cubic-bezier(0.19, 1, 0.22, 1); 
+            }
+            
+            //open accordian style
+           input:checked ~ p { 
+                max-height: 500px;
+                opacity: 1;
+                transition: all 1.95s cubic-bezier(0.19, 1, 0.22, 1);
+            }
+            
+        }
+    }
+}
+
+
+input:focus {
+    border: 3px solid red;
+    outline: 3px solid red;
+    background: red;
+}
+
+a:focus { 
+    color: $blue-dark;
+    font-weight: bold;
+    outline: none;
+}
+
+
+
+
 
 

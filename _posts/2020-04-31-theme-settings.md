@@ -55,8 +55,6 @@ Simple 是针对移动端开发的响应式 Jekyll 主题，兼具云笔记和�
 
 如果你觉得主题有什么改进之处，欢迎在下方评论区留言，也欢迎在 GitHub 仓库中提交代码，主题贡献者都将出现在下方。
 
-[{% avatar professordeng %}](https://github.com/professordeng)
-[{% avatar ericclose %}](https://github.com/ericclose)
 
 ## 更多设置
 

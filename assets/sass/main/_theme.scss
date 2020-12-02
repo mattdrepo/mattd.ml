@@ -1,9 +1,28 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   background: #87cc77;
+  position: relative;
   margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
   font-family: arial;
   width: 100vw;
   height: 100vh;
   animation: bugfix infinite 1s;
   -webkit-animation: bugfix infinite 1s;
 }
+
+
+
+
+

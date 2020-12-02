@@ -1,7 +1,7 @@
 # Customize site navigation
 nav:
 - name: Home
-  url: /
+  url: /home
 - name: Archives
   url: /archives.html
 - name: Blog

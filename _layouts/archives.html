@@ -1,8 +1,12 @@
-<!DOCTYPE html>
 <html lang="{{ site.lang | default: page.lang | default: 'en' }}">
   {% include archives-head.html %}
-  {% include nav.html %}
-  <body>
-      {{ content }}
+  <body>   
+  {% include nav.html %}  
+    <div class="container content">
+      <main>
+        {{ content }}
+      </main>
+    </div>
+  {% include footer.html %}      
   </body>
 </html>

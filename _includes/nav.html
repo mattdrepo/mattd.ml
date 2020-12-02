@@ -3,7 +3,7 @@
   <div id="overlay">
     <ul>
     {% for item in site.data.settings.nav %}
-          <li><a href="{{ item.url | relative_url }}" {% if page.title == item.name %} {% endif %} >{{ item.name }}</a></li>
+    <li><a href="{{ item.url | relative_url }}" {% if page.title == item.name %} {% endif %} >{{ item.name }}</a></li>
     {% endfor %}      
     </ul>
   </div>

@@ -2,23 +2,25 @@
 layout: archives
 title: Archives
 ---
-<div class="wrapper">
+<div class="wrap">    
+    <section class="question-section"> 
+        <h1>Pure CSS Content Accordion</h1>
+        <p>A pure CSS solution to a classically JS driven UI element.</p>
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %}
-  <label>
-<p>{{ group.name }} （{{ group.items | size }}）</p>
-    <div class="lil_arrow"></div>
-    <div class="content">
-      <ul>
-  {% for post in group.items %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a>
-    </li>
-  {% endfor %}        
-      </ul>
-    </div>
-    <span></span></label>
-{% endfor %}
+{% for group in posts_by_year %} 
+        <div class="cat-1">
+            <input id="tab-1" type="radio" name="tabs" tabindex="1"> 
+            <label for="tab-1" >{{ group.name }} （{{ group.items | size }}）</label><!-- end of tab label -->
+            <div class="question-wrap">
+        {% for post in group.items %}              
+                <div class="question">
+                    <input id="question-1" type="radio" name="questions-tab-one" tabindex="2">
+                    <label for="question-1" ><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></label><!-- end of question label -->
+                </div>
+         {% endfor %} 
+            </div>
+        </div><!-- end of Catagory -->
+ {% endfor %}       
+    </section><!-- End of Questions -->
 </div>
-
 

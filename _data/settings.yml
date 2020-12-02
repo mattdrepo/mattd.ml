@@ -1,0 +1,39 @@
+# Customize site navigation
+nav:
+- name: Home
+  url: /
+- name: Archives
+  url: /archives.html
+- name: Blog
+  url: /blog
+- name: About
+  url: /about.html
+
+# Available social icons are powered by Font Awesome, so you can use any icon that they offer
+social:
+- icon: github
+  link: https://github.com/professordeng/professordeng.github.io
+- icon: false    # weibo
+  link: https://weibo.com/codeng
+- icon: false
+  link: https://t.me/jekyll_simple
+- icon: false
+  link: https://zhihu.com/people/professordeng
+- icon: false
+  link: https://linkedin.com/in/professordeng
+  
+# Customize site text
+prev: Older
+next: Newer
+
+prev_page: Newer
+next_page: Older
+
+search_tip: Press enter to search
+searching: Searching
+
+blog: Blog
+
+read_more: Read More
+
+edit: edit

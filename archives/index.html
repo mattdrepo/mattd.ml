@@ -1,3 +1,19 @@
 ---
-layout: default
+layout: page
+title: Archives
 ---
+
+{% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %}
+{% for group in posts_by_year %}
+
+<h3 class="archives-title">{{ group.name }} （{{ group.items | size }}）</h3>
+<ul class="archives">
+  {% for post in group.items %}
+    <li class="archive-item">
+      <div class="archive-date">{{ post.date | date: "%m-%d" }}</div>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+{% endfor %}

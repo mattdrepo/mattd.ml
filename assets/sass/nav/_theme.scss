@@ -1,15 +1,5 @@
-.bg-dark {
-    background-color: #343a40 !important
-}
-
-a.bg-dark:focus,
-a.bg-dark:hover,
-button.bg-dark:focus,
-button.bg-dark:hover {
-    background-color: #1d2124 !important
-}
-
 .navbar {
+    z-index: 1;
     position: relative;
     display: -ms-flexbox;
     display: flex;
@@ -20,24 +10,7 @@ button.bg-dark:hover {
     -ms-flex-pack: justify;
     justify-content: space-between;
     padding: .5rem 1rem;
-  	border-radius: 0;
-  	border-bottom: 1px solid rgb(39, 44, 49);    
-}
-
-.navbar .container,
-.navbar .container-fluid,
-.navbar .container-lg,
-.navbar .container-md,
-.navbar .container-sm,
-.navbar .container-xl {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: justify;
-    justify-content: space-between
+  	border-radius: 0;   
 }
 
 .navbar-brand {
@@ -54,21 +27,6 @@ button.bg-dark:hover {
     font-size: 1.5em;
   }
     white-space: nowrap      
-}
-
-.navbar-brand:focus,
-.navbar-brand:hover {
-    text-decoration: none
-}
-
-
-.navbar-dark .navbar-brand {
-    color: #fff
-}
-
-.navbar-dark .navbar-brand:focus,
-.navbar-dark .navbar-brand:hover {
-    color: #fff
 }
 
 .avatar {
@@ -97,8 +55,6 @@ button.bg-dark:hover {
 	height: 1px;
 	z-index: -1;
 }
-
-
 
 @keyframes bugfix { from {padding:0;} to {padding:0;}}
 @-webkit-keyframes bugfix { from {padding:0;} to {padding:0;}}

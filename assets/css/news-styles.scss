@@ -1,0 +1,14 @@
+---
+---
+// Width of the content area
+$content-width: 800px;
+$on-palm: 600px;
+$on-laptop: 800px;
+
+@charset "utf-8";
+@import 'vendor/normalize';
+@import 'base/root';
+
+@import 'nav/theme';
+@import 'news/theme';
+@import 'footer/theme';

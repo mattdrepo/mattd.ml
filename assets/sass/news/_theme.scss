@@ -10,7 +10,8 @@ html {
 }
 
 body {
-  background: #87cc77;
+  color: var(--body-color);
+  background-color: var(--body-bg);
   position: relative;
   margin: 0;
   padding-bottom: 6rem;
@@ -20,6 +21,8 @@ body {
   height: 100vh;
   animation: bugfix infinite 1s;
   -webkit-animation: bugfix infinite 1s;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 

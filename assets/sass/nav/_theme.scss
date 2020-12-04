@@ -1,6 +1,10 @@
-.navbar {
-    z-index: 1;
-    position: relative;
+.overlay-image {
+    position: absolute;
+    right: 2em;
+    top: 3em;
+    padding: 26px 11px;
+    z-index: 5;
+    cursor: pointer;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -13,7 +17,7 @@
   	border-radius: 0;   
 }
 
-.navbar-brand {
+.overlay-brand {
     display: inline-block;
     padding-top: .3125rem;
     padding-bottom: .3125rem;

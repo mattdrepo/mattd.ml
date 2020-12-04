@@ -67,7 +67,7 @@ img {
 }
 .mt25 {
   margin-top: 0;
-  @include media-query(600px) {
+  @media screen and (max-width: 600px) {
     margin-top: 25px;
   }
 }

@@ -1,85 +1,105 @@
-html {
-  height: 100%;
-  box-sizing: border-box;
+html,
+body {	
+  	font-family: arial;
+/* 	Pure CSS Animated Gradient Background */	
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 360s ease infinite; 	
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
-body {
-  color: var(--body-color);
-  background-color: var(--body-bg);
-  position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
-  min-height: 100%;
-  font-family: arial;
-  width: 100vw;
-  height: 100vh;
-  animation: bugfix infinite 1s;
-  -webkit-animation: bugfix infinite 1s;
-  -webkit-text-size-adjust: 100%;
-  -ms-text-size-adjust: 100%;
+.navbar {
+  border-radius: 0;
+  border-bottom: 1px solid rgb(39, 44, 49);
 }
 
-
-// Layout
-//
-// Styles for managing the structural hierarchy of the site.
-
-.container {
-  max-width: 38rem;
-  min-height: calc(100vh - 9rem);  // fixed footer
-  margin: 0 auto;  // Center horizontally
+img {
+  max-width: 100%;
 }
 
-.footer {
-  text-align: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  min-height: 4rem; 
-  
-  & a {
-    color: var(--gray-600);
-    padding: .8rem;
-    text-decoration: none;
-    border-radius: 50%;
-    
-    &:hover {
-      color: var(--gray-900);
-      background-color: var(--gray-400);
-    }
+.avatar {
+	position: relative;
+	padding-top:40px;
+        padding-right:-20px;
+	display: block;
+	margin-bottom: 1.5em;
+}
+.avatar img {
+	display: block;
+	margin: 0 auto;
+	border-radius: 100%;
+	box-shadow: 0 0 0 1em #ffffff;
+	background: #ffffff;
+	width: 50%;
+	height: 50%;
+}
+.avatar:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: -3em;
+	width: calc(100% + 6em);
+	height: 1px;
+	z-index: -1;
+}
+
+.mt50 {
+  margin-top: 50px;
+}
+.mt20 {
+  margin-top: 20px;
+}
+
+.mt10 {
+  margin-top: 10px;
+}
+.mt25 {
+  margin-top: 0;
+  @include media-query($on-palm) {
+    margin-top: 25px;
   }
 }
 
-// back top button
-.top{
-  display: none;
-  cursor: pointer;
-  padding: .5rem;
-  bottom: 2rem; 
-  right: 1rem; 
-  position: fixed; 
-  z-index: 99; 
-  
-  border-radius: 50%;
-  background-color: var(--gray-400);
-  
-  @media (min-width: 60rem) {
-    bottom: 1rem;
-    right: calc(50vw - 23rem);
+.p20 {
+  padding: 20px 0;
+}
+.navbar-brand {
+  font-weight: 900;
+  font-size: 1.85em;
+  padding: 10px;
+  margin-left: 15px !important;
+  @media screen and (max-width: $on-palm) {
+    font-size: 1.5em;
   }
 }
-
-.theme {
-  text-align: center;
-  font-size: .8rem;
-  min-height: 4rem;
+.nav-link {
+  font-size: 1.85em;
+  padding: 10px;
+  margin-left: 15px !important;	
+  font-family: 'Sedgwick Ave Display', cursive;
+  color: #fff;	
+  @media screen and (max-width: $on-palm) {
+    font-size: 1.5em;
+  }	
 }
 
+
+
+.post-meta {
+  color: $grey-color;
+}
 
 .card {
   background-color: rgb(39, 44, 49);
@@ -145,7 +165,7 @@ body {
 
 .recent {
   padding: 10px;
-  border: 1px solid $grey-color;
+  border: 1px solid $grey-color-light;
 }
 
 .post-img img {

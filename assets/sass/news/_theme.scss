@@ -67,7 +67,7 @@ img {
 }
 .mt25 {
   margin-top: 0;
-  @include media-query($on-palm) {
+  @include media-query(600px) {
     margin-top: 25px;
   }
 }
@@ -80,7 +80,7 @@ img {
   font-size: 1.85em;
   padding: 10px;
   margin-left: 15px !important;
-  @media screen and (max-width: $on-palm) {
+  @media screen and (max-width: 600px) {
     font-size: 1.5em;
   }
 }
@@ -90,7 +90,7 @@ img {
   margin-left: 15px !important;	
   font-family: 'Sedgwick Ave Display', cursive;
   color: #fff;	
-  @media screen and (max-width: $on-palm) {
+  @media screen and (max-width: 600px) {
     font-size: 1.5em;
   }	
 }
@@ -124,7 +124,7 @@ img {
       height: 220px;
       object-fit: cover;
       object-position: center;
-      @media screen and (max-width: $on-palm) {
+      @media screen and (max-width: 600px) {
         width: 100%;
       }
     }
@@ -165,7 +165,7 @@ img {
 
 .recent {
   padding: 10px;
-  border: 1px solid $grey-color-light;
+  border: 1px solid lighten(#000000, 40%);
 }
 
 .post-img img {

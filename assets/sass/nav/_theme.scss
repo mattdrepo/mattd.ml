@@ -1,10 +1,6 @@
-.logo-overlay {
-    position: absolute;
-    right: 2em;
-    top: 3em;
-    padding: 26px 11px;
-    z-index: 5;
-    cursor: pointer;
+.navbar {
+    z-index: 1;
+    position: relative;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
@@ -17,7 +13,7 @@
   	border-radius: 0;   
 }
 
-.overlay-brand {
+.navbar-brand {
     display: inline-block;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
@@ -27,7 +23,7 @@
   	font-size: 1.85em;
   	padding: 10px;
   	margin-left: 15px !important;
-  	@media screen and (max-width: 600px) {
+  	@media screen and (max-width: $on-palm) {
     font-size: 1.5em;
   }
     white-space: nowrap      

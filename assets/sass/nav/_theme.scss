@@ -121,12 +121,13 @@ input[type=checkbox]:checked ~ #overlay-button {
 }
 
 #overlay {
+  position: absolute;
+  top: 0vh;	
   height: 100vh;
   width: 100vw;
   background: #ec6451;
   z-index: 2;
   visibility: hidden;
-  position: fixed;
   &.active {
     visibility: visible;
   }

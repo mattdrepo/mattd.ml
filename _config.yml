@@ -12,7 +12,7 @@ description: > # this means to ignore newlines until "baseurl:"
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+url: "https://mattd.ml" # the base hostname & protocol for your site
 
 # Modify these lines later
 # Specify the author for blog posts
@@ -28,6 +28,9 @@ highlighter: rouge
 permalink: /:day-:month-:year-:title/
 paginate: 5
 paginate_path: "/news/page:num/"
+# Markdown settings
+kramdown:
+  input: GFM
 
 # default layout of the articles in _post
 defaults:
@@ -36,11 +39,6 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-
-# Markdown settings
-markdown: kramdown
-kramdown:
-  input: GFM
 
 # Sass settings
 sass:

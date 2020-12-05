@@ -4,63 +4,17 @@ title: Archives
 ---
 <div class="wrapper">
 <ul>
+{% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
+{% for group in posts_by_year %}   
   <li>
-    <input type="checkbox" id="list-item-1">
-    <label for="list-item-1" class="first">Serif</label>
+    <input type="checkbox" id="list-item-{{ group.name }}">
+    <label for="list-item-{{ group.name }}" >{{ group.name }} （{{ group.items | size }}）</label><!-- end of tab label -->
     <ul>
-      <li>Slabo</li>
-      <li>Droid Serif</li>
-      <li>Roboto Serif</li>
-      <li>Lora</li>
-      <li>Meriweather</li>
+    {% for post in group.items %}        
+      <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></li><!-- end of question label -->
+    {% endfor %}
     </ul>
   </li>
-  <li>
-    <input type="checkbox" id="list-item-2">
-    <label for="list-item-2">Sans Serif</label>
-    <ul>
-      <li>Open Sans</li>
-      <li>Roboto</li>
-      <li>Lato</li>
-      <li>Stabo</li>
-      <li>Oswald</li>
-    </ul>
-  </li>
-  <li>
-    <input type="checkbox" id="list-item-3">
-    <label for="list-item-3" class="last">Monospace</label>
-    <ul>
-      <li>Inconsolata</li>
-      <li>Source Code Pro</li>
-      <li>Droid Sans Mono</li>
-      <li>Ubuntu Mono</li>
-      <li>Cousine</li>
-    </ul>
-  </li>
+ {% endfor %}        
 </ul>
 </div>
-
-
-
-<div class="wrap">    
-    <section class="question-section"> 
-        <h1>Pure CSS Content Accordion</h1>
-        <p>A pure CSS solution to a classically JS driven UI element.</p>
-{% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %} 
-        <div class="cat-{{ group.name }}">
-            <input id="tab-{{ group.name }}" type="radio" name="tabs" tabindex="1"> 
-            <label for="tab-{{ group.name }}" >{{ group.name }} （{{ group.items | size }}）</label><!-- end of tab label -->
-        {% for post in group.items %} 
-            <div class="question-wrap">
-                <div class="question">
-                    <input id="question-1" type="radio" name="questions-tab-one" tabindex="2">
-                    <label for="question-1" ><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></label><!-- end of question label -->
-                </div>
-            </div>
-          {% endfor %}
-        </div><!-- end of Catagory -->
- {% endfor %}       
-    </section><!-- End of Questions -->
-</div>
-

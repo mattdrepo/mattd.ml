@@ -50,21 +50,7 @@ article h1 label:last-child {
   white-space: nowrap;
 }
 
-/* DUMMY STYLING */
 
-html {
-  min-height: 100%;
-}
-
-body {
-  background-image: linear-gradient(to bottom right, teal, cyan);
-  justify-content: center;
-  padding: 2rem 1rem;
-  display: flex;
-  margin: 0;
-  min-height: 100%;
-  box-sizing: border-box;
-}
 
 #accordion {
   box-shadow: .25rem .25rem .75rem rgba(0,0,0,.5);

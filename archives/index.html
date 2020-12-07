@@ -11,9 +11,11 @@ title: Archives
       <label for="checkbox-{{ group.name }}">Posts From {{ group.name }} （{{ group.items | size }}）</label>
       <div class="content">
         <h3>Posts From {{ group.name }} （{{ group.items | size }}）</h3>
+        <p>
       {% for post in group.items %}        
-      <p><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
+      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a><br>
       {% endfor %}
+        </p>
       </div>
     </li>
  {% endfor %}  

@@ -38,7 +38,7 @@ $ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
 
 body {
   font-family: 'Open Sans', sans-serif;
-  background: $light-grey;
+  background: hsl(200, 3%, 12%);
   
   &:before {
     content: '';

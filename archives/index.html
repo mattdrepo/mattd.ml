@@ -2,22 +2,19 @@
 layout: archives
 title: Archives
 ---
-<div class="accordion vertical">
-  <ul>
+<section id="accordion">
+  <input id="acc0toggle" type="radio" name="section" value="0" hidden/>
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %}     
-    <li>
-      <input type="checkbox" id="checkbox-{{ group.name }}" name="checkbox-accordion" />
-      <label for="checkbox-{{ group.name }}">Posts From {{ group.name }} （{{ group.items | size }}）</label>
-      <div class="content">
-        <h3>Posts From {{ group.name }} （{{ group.items | size }}）</h3>
-        <p>
-      {% for post in group.items %}        
-      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a><br>
-      {% endfor %}
-        </p>
-      </div>
-    </li>
- {% endfor %}  
-  </ul>
-</div>
+{% for group in posts_by_year %} 
+  <input id="acc3toggle" type="radio" name="section" value="{{ group.name }}" hidden/>
+  <article style="--children: {{ group.items | size }}">
+    <h1>
+      <label for="acc3toggle">Posts From {{ group.name }} （{{ group.items | size }}）</label>
+      <label for="acc0toggle">Hide</label>
+    </h1>
+    {% for post in group.items %}
+    <p><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
+    {% endfor %}
+  </article>
+ {% endfor %}    
+</section>

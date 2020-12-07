@@ -1,95 +1,59 @@
+@keyframes letterspacer {
+  from {
+    letter-spacing: 0.8px;
+    transform: perspective(1000px) rotateX(3deg) rotateY(9deg) translateZ(20px);
+  }
+  to {
+    letter-spacing: 0px;
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}
 section {
-  justify-content: center;
-  padding: 2rem 1rem;
-  display: flex;
-  margin: 0;
-  min-height: 100%;
-  box-sizing: border-box;
+  max-width: 668px;
+  margin: 0 auto;
 }
-
-:root {
-  --line-height: 3.125rem;
-  --title-height: var(--line-height);
-  --children: 1;
-}
-
-/* MAIN FUNCTIONALITY */
-
-article {
-  --max-height: calc(var(--title-height) + (var(--children) * var(--line-height)));
-  max-height: var(--max-height);
-  transition: max-height .2s ease-in-out;
-}
-
-input:not(:checked) + article {
-  max-height: var(--line-height);
-}
-
-input:not(:checked) + article h1 label[for="acc0toggle"] {
-  pointer-events: none;
-}
-
-article h1 {
-  position: relative;
-}
-
-article h1 label:first-child:after {
-  justify-content: center;
-  margin-left: auto;
-  display: flex;
-  content: "+";
-  width: 1rem;
-}
-
-input:checked + article h1 label:first-child:after {
-  content: "-";
-}
-
-article h1 label:last-child {
-  background: transparent;
-  color: transparent;
+[name="accordion"] {
   position: absolute;
-  opacity: 0;
-  bottom: 0;
-  right: 0;
   left: 0;
-  top: 0;
-  overflow: hidden;
-  justify-content: flex-end;
-  white-space: nowrap;
+  margin-left: -9999px;
+}
+label {
+  display: block;
+  position: relative;
+  border: 1px solid #ccc;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background: #e9e9e9;
+  clear: both;
+  list-style-type: square;
+}
+label:not(:nth-of-type(1)) {
+  margin-top: 0.5em;
+}
+label + div {
+  margin-top: 0.5em;
+}
+[name="accordion"] {
+  + label + div {
+    display: none;
+    animation: letterspacer 0.3s backwards;
+  }
+  &:checked + label + div {
+    display: block;
+    margin: 1em 2em;
+    animation: letterspacer 3.4s forwards cubic-bezier(0.19, 1, 0.22, 1);
+  }
 }
 
-
-
-#accordion {
-  box-shadow: .25rem .25rem .75rem rgba(0,0,0,.5);
-  font-family: sans-serif;
-  background: #fff;
-  width: 30rem;
-}
-
-article h1 {
-  margin: 0 -1rem;
-}
-
-h1 > label {
-  box-sizing: border-box;
-  padding: .5rem 1rem;
-  align-items: center;
-  background: darkslategray;
+pre.code {
+  border: dashed 1px #ddd;
+  padding: 0.5em;
   display: flex;
-  height: var(--line-height);
-  cursor: pointer;
-  font-weight: normal;
-  color: #fff;
-  box-shadow: 0 -.0625rem 0 0 rgba(0,0,0,.15) inset;
+  align-self: center;
 }
 
-h1 > label:focus {
-  outline: 1px dashed cyan;
-}
-
-article {
-  overflow: hidden;
-  padding: 0 1rem;
+@media (max-width: 768px) {
+  pre,pre.code {
+    white-space:normal;
+  }
 }

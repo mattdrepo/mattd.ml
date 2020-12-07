@@ -63,4 +63,4 @@ body {
 .vertical ul li label:hover { }
 .vertical ul li .content { height: 0px; border-top: 0; }
 .vertical [type=radio]:checked ~ label ~ .content,
-.vertical [type=checkbox]:checked ~ label ~ .content { height: 100%; }
+.vertical [type=checkbox]:checked ~ label ~ .content {}

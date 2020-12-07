@@ -2,19 +2,18 @@
 layout: archives
 title: Archives
 ---
-<section id="accordion">
-  <input id="acc0toggle" type="radio" name="section" value="0" hidden/>
+<section>
+  <h1>No JS Accordion</h1>
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %} 
-  <input id="acc3toggle" type="radio" name="section" value="{{ group.name }}" hidden/>
-  <article style="--children: {{ group.items | size }}">
-    <h1>
-      <label for="acc3toggle">Posts From {{ group.name }} （{{ group.items | size }}）</label>
-      <label for="acc0toggle">Hide</label>
-    </h1>
-    {% for post in group.items %}
+{% for group in posts_by_year %}   
+  <input id="{{ group.name }}" type="radio" name="accordion">
+  <label for="{{ group.name }}">Posts From {{ group.name }} （{{ group.items | size }}）</label>
+  <div>
+    {% for post in group.items %}    
+    <pre class="code">
     <p><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
-    {% endfor %}
-  </article>
- {% endfor %}    
+   </pre>
+    {% endfor %}    
+  </div>
+ {% endfor %} 
 </section>

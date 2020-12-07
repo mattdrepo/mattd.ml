@@ -23,47 +23,45 @@ body {
 */
 
 .accordion {
-  max-width: 400px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  overflow: hidden;
-  font-family: "Quicksand", sans-serif;
-  background: #009578;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 140px auto;
+  font-size: 14px;
+  border: 8px solid #fff;
+  border-radius: 4px;
+  width: 600px;
+  background: hsl(200, 3%, 12%);
 }
 
-.accordion__label,
-.accordion__content {
-  padding: 14px 20px;
-}
+.accordion ul { list-style: none; margin: 0; padding: 0; }
+.accordion li { margin: 0; padding: 0; }
+.accordion [type=radio], .accordion [type=checkbox] { display: none; }
 
-.accordion__label {
+.accordion label {
   display: block;
-  color: #ffffff;
-  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  background: #743336;
+  color: #BEE5D4;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  font-weight: 700;
   cursor: pointer;
-  position: relative;
-  transition: background 0.1s;
+  text-transform: uppercase;
+  transition: all .2s ease-out;
 }
+.accordion ul li label:hover,
+.accordion [type=radio]:checked ~ label,
+.accordion [type=checkbox]:checked ~ label { background: green; color: yellow; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+.accordion .content { padding: 0 10px; overflow: hidden; transition: all .8s ease-in-out; }
+.accordion p { color: #333; margin: 0 0 10px; }
+.accordion h3 { color: #542437; padding: 0; margin: 10px 0; }
 
-.accordion__label:hover {
-  background: rgba(0, 0, 0, 0.1);
-}
 
-.accordion__content {
-  background: #ffffff;
-  line-height: 1.6;
-  font-size: 0.85em;
-  display: none;
-}
-
-.accordion__input {
-  display: none;
-}
-
-.accordion__input:checked ~ .accordion__content {
-  display: block;
-}
-
-.accordion__input:checked ~ .accordion__label::after {
-  transform: translateY(-50%) rotate(0.5turn);
-}
+/* ========== Vertical ========== */
+.vertical ul li { overflow: hidden; margin: 0 0 1px; }
+.vertical ul li label { padding: 10px; }
+.vertical [type=radio]:checked ~ label,
+.vertical [type=checkbox]:checked ~ label { border-bottom: 0; }
+.vertical ul li label:hover { }
+.vertical ul li .content { height: 0px; border-top: 0; }
+.vertical [type=radio]:checked ~ label ~ .content,
+.vertical [type=checkbox]:checked ~ label ~ .content { height: 200px; }

@@ -26,7 +26,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 140px auto;
   font-size: 14px;
-  border: 8px solid #fff;
   border-radius: 4px;
   width: 600px;
   background: hsl(200, 3%, 12%);
@@ -40,8 +39,8 @@ body {
   display: block;
   font-size: 16px;
   line-height: 16px;
-  background: #743336;
-  color: #BEE5D4;
+  background: hsl(200, 3%, 12%);
+  color: #fff;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
   font-weight: 700;
   cursor: pointer;

@@ -2,6 +2,7 @@
 layout: archives
 title: Archives
 ---
+<div class="wrapper">
 <div class="accordion">
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
 {% for group in posts_by_year %}   
@@ -16,4 +17,5 @@ title: Archives
     </div>
   </div>
  {% endfor %}   
+</div>
 </div>

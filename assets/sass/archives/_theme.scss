@@ -49,10 +49,10 @@ body {
 }
 .accordion ul li label:hover,
 .accordion [type=radio]:checked ~ label,
-.accordion [type=checkbox]:checked ~ label { background: green; color: yellow; text-shadow: 1px 1px 1px rgba(0,0,0,0.5); }
+.accordion [type=checkbox]:checked ~ label { background: #343a40; color: #fff; }
 .accordion .content { padding: 0 10px; overflow: hidden; transition: all .8s ease-in-out; }
 .accordion p { color: #333; margin: 0 0 10px; }
-.accordion h3 { color: #542437; padding: 0; margin: 10px 0; }
+.accordion h3 { color: #fff; padding: 0; margin: 10px 0; }
 
 
 /* ========== Vertical ========== */

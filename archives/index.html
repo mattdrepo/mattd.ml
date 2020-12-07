@@ -11,9 +11,11 @@ title: Archives
     <label for="panel-{{ group.name }}">{{ group.name }} （{{ group.items | size }}）</label>
     <div class="accordion__content accordion__content--small">
       <h2 class="accordion__header">{{ group.name }} （{{ group.items | size }}）</h2>
-        {% for post in group.items %}
-      <p class="accordion__body"><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
+      <p class="accordion__body">
+      {% for post in group.items %}        
+      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a>
       {% endfor %}
+      </p>
     </div>
   </div>
  {% endfor %} 

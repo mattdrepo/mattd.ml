@@ -4,19 +4,16 @@ title: Archives
 ---
 <div class="accordion">
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %} 
-  <!-- Panel 1 -->
+{% for group in posts_by_year %}   
   <div>
-    <input type="radio" name="panel" id="panel-{{ group.name }}">
-    <label for="panel-{{ group.name }}">Posts From {{ group.name }} （{{ group.items | size }}）</label>
-    <div class="accordion__content accordion__content--small">
-      <h2 class="accordion__header">Here are my posts from {{ group.name }} （{{ group.items | size }}）</h2>
-      <p class="accordion__body">
+    <input type="radio" name="example_accordion" id="section{{ group.name }}" class="accordion__input">
+    <label for="section{{ group.name }}" class="accordion__label">Posts From {{ group.name }} （{{ group.items | size }}）</label>
+    <div class="accordion__content">
+      <p>Here are my posts from {{ group.name }} （{{ group.items | size }}）</p>
       {% for post in group.items %}        
-      <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a><br>
+      <p><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
       {% endfor %}
-      </p>
     </div>
   </div>
- {% endfor %} 
-</div><!-- .accordion -->
+ {% endfor %}   
+</div>

@@ -3,18 +3,28 @@ layout: archives
 title: Archives
 ---
 <div class="wrapper">
-<ul>
+
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
-{% for group in posts_by_year %}   
-  <li>
-    <input type="checkbox" id="list-item-{{ group.name }}">
-    <label for="list-item-{{ group.name }}" >{{ group.name }} （{{ group.items | size }}）</label><!-- end of tab label -->
-    <ul>
-    {% for post in group.items %}        
-      <li><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></li><!-- end of question label -->
-    {% endfor %}
-    </ul>
-  </li>
- {% endfor %}        
-</ul>
+{% for group in posts_by_year %}  
+  <div class="wrap-1">
+    
+    <input type="radio" id="tab-{{ group.name }}">
+    <label for="tab-{{ group.name }}" ><div>{{ group.name }} （{{ group.items | size }}）</div></label><!-- end of tab label -->
+    
+    
+    
+    <div class="content">
+        {% for post in group.items %}
+        <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a>
+      {% endfor %}
+    </div>
+    
+    
+  </div>
+ {% endfor %} 
+  
 </div>
+
+
+
+

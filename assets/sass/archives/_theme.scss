@@ -1,55 +1,5 @@
-/* 
-* Typography
-*/
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
-
-
-/*
-* Color Variables
-*/
-
-$light-grey: #eee;
-$med-grey: #666;
-$dark-grey: #444;
-$highlight-color: #27ae60;
-
-
-/*
-* Animation Variables
-*/
-
-$timing: .4s;
-$ease: cubic-bezier(0.865, 0.140, 0.095, 0.870);
-
-
-/* 
-* Global
-*/
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-}
-
-/* 
-* Base
-*/
-
 body {
-  font-family: 'Open Sans', sans-serif;
-  background: hsl(200, 3%, 12%);
-  
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.3) 100%);
-  }
-  
+  background: hsl(200, 3%, 12%); 
 }
 
 
@@ -57,87 +7,61 @@ body {
 * Accordion
 */
 
-/* Basic Accordion Styles */
 .accordion {
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: "Quicksand", sans-serif;
+  background: #009578;
+}
+
+.accordion__label,
+.accordion__content {
+  padding: 14px 20px;
+}
+
+.accordion__label {
+  display: block;
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.1s;
+}
+
+.accordion__label:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.accordion__label::after {
+  content: "";
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75%;
-  box-shadow: 0 1px 8px rgba(#000,.25);
-  
-  
-  /* Radio Inputs */
-  input[name='panel'] {
-    display: none;
-  }
-
-  /* Labels */
-  label {
-    position: relative;
-    display: block;
-    padding: 1em;
-    background: #fff;
-    border-top: 1px solid #fff;
-    border-bottom: 1px solid rgba(#000,.15);
-    box-shadow: inset 0 2px 0 #fff;
-    font-size: 1.5em;
-    text-shadow: 0 1px 0 rgba(#fff,.75);
-    color: $med-grey;
-    cursor: pointer;
-    transition: all $timing $ease;
-    
-    &:hover {
-      color: $highlight-color;
-    }
-      
-  }
-  
-  input:checked + label {
-    color: $highlight-color;
-  }
-  
-  /* Panel Content */
-  .accordion__content {
-    overflow: hidden;
-    height: 0px;
-    position: relative;
-    padding: 0 1.5em;
-    background: $dark-grey;
-    background: linear-gradient(to bottom, rgba(68,68,68,1) 0%,rgba(34,34,34,1) 100%);
-    color: $light-grey;
-    transition: height $timing $ease;
-    
-    &:not(:last-of-type) {
-      box-shadow: inset 0 -2px 2px rgba(#000,.25), inset 4px 0 0 0 $highlight-color, inset 0 3px 6px rgba(#000,.75);
-    }
-    
-    .accordion__header {
-      padding: 1em 0;
-    }
-      
-    .accordion__body {
-      font-size: .825em;
-      line-height: 1.4em;
-    }
-    
-  }
-   
+  transform: translateY(-50%);
+  right: 20px;
+  width: 12px;
+  height: 6px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="50" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 100,0 50,50" style="fill:%23FFFFFF99;" /></svg>');
+  background-size: contain;
+  transition: transform 0.4s;
 }
 
-
-/* 
-* Size Variations
-*/
-
-input[name='panel']:checked ~ .accordion__content.accordion__content--small {
-  height: 150px;
+.accordion__content {
+  background: #ffffff;
+  line-height: 1.6;
+  font-size: 0.85em;
+  display: none;
 }
 
-input[name='panel']:checked ~ .accordion__content.accordion__content--med {
-  height: 200px;
+.accordion__input {
+  display: none;
 }
 
-input[name='panel']:checked ~ .accordion__content.accordion__content--large {
-  height: 300px;
+.accordion__input:checked ~ .accordion__content {
+  display: block;
+}
+
+.accordion__input:checked ~ .accordion__label::after {
+  transform: translateY(-50%) rotate(0.5turn);
 }

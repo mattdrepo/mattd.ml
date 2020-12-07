@@ -1,7 +1,14 @@
+/*
+* "No-Strap" code
+*/
+
 body {
   background: hsl(200, 3%, 12%); 
 }
 
+.container {
+  min-width: 992px !important
+}
 
 /*
 * Accordion

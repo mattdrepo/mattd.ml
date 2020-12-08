@@ -10,7 +10,7 @@ title: Archives
         <label class="tab-label" for="{{ group.name }}">Posts From {{ group.name }} （{{ group.items | size }}）</label>
         <div class="tab-content">
     {% for post in group.items %}    
-    <p><a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a></p>
+    <a href="{{ post.url | relative_url }}">{{ post.date | date: "%m-%d" }} {{ post.title }}</a><br>
     {% endfor %}  
         </div>
       </div>

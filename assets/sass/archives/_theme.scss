@@ -97,7 +97,7 @@ input {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: hsl(200, 3%, 12%);
+    background: darken( hsl(200, 3%, 12%), 10%);    
     font-weight: bold;
     cursor: pointer;
     /* Icon */

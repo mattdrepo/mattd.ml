@@ -124,7 +124,7 @@ input {
     justify-content: flex-end;
     padding: 1em;
     font-size: 0.75em;
-    background: hsl(200, 3%, 12%);
+    background: darken( hsl(200, 3%, 12%), 10%);
     cursor: pointer;
     &:hover {
       background: darken( hsl(200, 3%, 12%), 10%);

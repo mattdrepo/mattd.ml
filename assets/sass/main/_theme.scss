@@ -38,19 +38,8 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   min-height: 4rem; 
-  
-  & a {
-    color: #fff;
-    padding: .8rem;
-    text-decoration: none;
-    border-radius: 50%;
-    
-    &:hover {
-      color: #fff;
-      text-decoration: line-through;
-    }
-  }
-}
+} 
+
 
 // back top button
 .top{

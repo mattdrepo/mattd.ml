@@ -2,6 +2,11 @@
 layout: archives
 title: Archives
 ---
+<h1>A Cool Accordion</h1>
+
+<p class="description">
+  You could simply toggle the .show class (if display: block is uncommented in the CSS) in JavaScript, but you'll lose the animation.
+</p>
     <div class="tabs">
 {% assign posts_by_year = site.posts | group_by_exp:"post", "post.date | date: '%Y' " %} 
 {% for group in posts_by_year %}        

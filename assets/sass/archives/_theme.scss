@@ -24,6 +24,19 @@ p {
     color:      #fff;
 }
 
+  & a {
+    color: var(#fff);
+    padding: .8rem;
+    text-decoration: none;
+    border-radius: 50%;
+    
+    &:hover {
+      color: var(#fff));
+      text-decoration: line-through;
+    }
+  }
+}
+
 .description {
   margin: 1em auto 2.25em;
 }

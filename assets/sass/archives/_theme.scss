@@ -100,17 +100,6 @@ input {
     background: darken( hsl(200, 3%, 12%), 10%);    
     font-weight: bold;
     cursor: pointer;
-    /* Icon */
-    &:hover {
-      background: darken( hsl(200, 3%, 12%), 10%);
-    }
-    &::after {
-      content: "\276F";
-      width: 1em;
-      height: 1em;
-      text-align: center;
-      transition: all .35s;
-    }
   }
   &-content {
     max-height: 0;

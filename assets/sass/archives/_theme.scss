@@ -25,13 +25,13 @@ p {
 }
 
   & a {
-    color: var(#fff);
+    color: #fff;
     padding: .8rem;
     text-decoration: none;
     border-radius: 50%;
     
     &:hover {
-      color: var(#fff));
+      color: #fff;
       text-decoration: line-through;
     }
   }

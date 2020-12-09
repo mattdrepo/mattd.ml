@@ -15,11 +15,13 @@ h1 {
     font-family: 'Pacifico', cursive;
     font-weight: 400;
     font-size: 2.5em;
+    color:      #fff;
 }
 
 p {
     font-size:1.1em;
     margin: 1em 0;
+    color:      #fff;
 }
 
 .description {
@@ -122,7 +124,7 @@ input {
     max-height: 0;
     padding: 0 1em;
     color: hsl(200, 3%, 12%);
-    background: white;
+    background: hsl(200, 3%, 12%);
     transition: all .35s;
   }
   &-close {

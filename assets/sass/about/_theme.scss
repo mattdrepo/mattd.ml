@@ -9,6 +9,23 @@ html {
   box-sizing: inherit;
 }
 
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-weight: 400;
+    font-size: 2.5em;
+    color:      #fff;
+}
+
+p {
+    font-size:1.1em;
+    margin: 1em 0;
+    color:      #fff;
+}
+
+.description {
+  margin: 1em auto 2.25em;
+}
+
 body {
   background: hsl(200, 3%, 12%);
   position: relative;

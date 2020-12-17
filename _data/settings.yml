@@ -2,12 +2,16 @@
 nav:
 - name: Home
   url: /home
+- name: Projects
+  url: /projects  
 - name: Archives
   url: /archives
 - name: News
   url: /news
 - name: About
   url: /about
+- name: Contact
+  url: /contact
 
 # Available social icons are powered by Font Awesome, so you can use any icon that they offer
 social:
